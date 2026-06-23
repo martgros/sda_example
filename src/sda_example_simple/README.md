@@ -60,10 +60,10 @@ $$
 \phi_i \sim \mathrm{Beta}(a,\; b), \quad \phi_i \in [0, 1]
 $$
 
-where $b$ is derived to satisfy $\mathbb{E}[\phi_i] = \mu / \bar{q}$:
+where $b$ is derived with $\mu = \frac{\text{mean-output}}{\text{max-output}}$
 
 $$
-b = \max\!\left(\, a \cdot \left(\frac{\bar{q}}{\mu} - 1\right),\; a + 0.25 \right)
+b = a \cdot \left(\frac{1-\mu}{\mu} \right)
 $$
 
 The realized output of machine $i$ is:
@@ -72,7 +72,7 @@ $$
 q_i = \mathrm{round}\!\left(\phi_i \cdot \bar{q}\right)
 $$
 
-Machines are skewed toward underperformance because $b > a$ when $\mu < \bar{q}/2$.
+With the current parameterization ($\mu$ ~ 0.9), $b < a$, so the distribution is skewed toward high output; at the same time, it retains a meaningful left tail (a "fat tail" for underperformance) that captures occasional weak machine steps.
 
 ### Step Production
 
