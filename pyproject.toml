@@ -1,0 +1,21 @@
+[project]
+name = "sda-example"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "matplotlib>=3.10.9",
+    "nbformat>=5.10.4",
+    "plotly>=6.1.0",
+    "pytest>=9.0.3",
+    "ruff>=0.15.16",
+]
+
+[dependency-groups]
+dev = [
+	"mypy>=1.17.0",
+	"pytest>=8.4.0",
+	"ruff>=0.12.0",
+]
